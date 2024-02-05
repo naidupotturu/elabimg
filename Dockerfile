@@ -67,43 +67,43 @@ WORKDIR /build/nginx-$NGINX_VERSION
 # -Wl,-z,noexecstack: Mark the stack as non-executable (prevents execution of code placed on the stack)
 # -fPIC: Generate position-independent code (PIC) (suitable for building shared libraries)
 RUN ./configure \
-        --prefix=/var/lib/nginx \
-        --sbin-path=/usr/sbin/nginx \
-        --with-cc-opt='-g0 -O3 -fstack-protector-strong -flto -pie --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -Wl,-z,relro,-z,now -Wl,-z,noexecstack -fPIC'\
-        --modules-path=/usr/lib/nginx/modules \
-        --conf-path=/etc/nginx/nginx.conf \
-        --pid-path=/run/nginx.pid \
-        --error-log-path=/var/log/nginx/error.log \
-        --http-log-path=/var/log/nginx/access.log \
-        --lock-path=/run/nginx.lock \
-        --http-client-body-temp-path=/run/nginx-client_body \
-        --http-fastcgi-temp-path=/run/nginx-fastcgi \
-        --user=nginx \
-        --group=nginx \
-        --with-threads \
-        --with-http_ssl_module \
-        --with-http_v2_module \
-        --with-http_realip_module \
-        --with-http_gzip_static_module \
-        --with-http_stub_status_module \
-        --add-module=/build/ngx_brotli \
-        --add-module=/build/headers-more-nginx-module \
-        --without-http_autoindex_module \
-        --without-http_browser_module \
-        --without-http_empty_gif_module \
-        --without-http_geo_module \
-        --without-http_limit_conn_module \
-        --without-http_limit_req_module \
-        --without-http_map_module \
-        --without-http_memcached_module \
-        --without-http_proxy_module \
-        --without-http_referer_module \
-        --without-http_scgi_module \
-        --without-http_split_clients_module \
-        --without-http_ssi_module \
-        --without-http_upstream_ip_hash_module \
-        --without-http_userid_module \
-        --without-http_uwsgi_module \
+    --prefix=/var/lib/nginx \
+    --sbin-path=/usr/sbin/nginx \
+    --with-cc-opt='-g0 -O3 -fstack-protector-strong -flto -pie --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -Wl,-z,relro,-z,now -Wl,-z,noexecstack -fPIC'\
+    --modules-path=/usr/lib/nginx/modules \
+    --conf-path=/etc/nginx/nginx.conf \
+    --pid-path=/run/nginx.pid \
+    --error-log-path=/var/log/nginx/error.log \
+    --http-log-path=/var/log/nginx/access.log \
+    --lock-path=/run/nginx.lock \
+    --http-client-body-temp-path=/run/nginx-client_body \
+    --http-fastcgi-temp-path=/run/nginx-fastcgi \
+    --user=nginx \
+    --group=nginx \
+    --with-threads \
+    --with-http_ssl_module \
+    --with-http_v2_module \
+    --with-http_realip_module \
+    --with-http_gzip_static_module \
+    --with-http_stub_status_module \
+    --add-module=/build/ngx_brotli \
+    --add-module=/build/headers-more-nginx-module \
+    --without-http_autoindex_module \
+    --without-http_browser_module \
+    --without-http_empty_gif_module \
+    --without-http_geo_module \
+    --without-http_limit_conn_module \
+    --without-http_limit_req_module \
+    --without-http_map_module \
+    --without-http_memcached_module \
+    --without-http_proxy_module \
+    --without-http_referer_module \
+    --without-http_scgi_module \
+    --without-http_split_clients_module \
+    --without-http_ssi_module \
+    --without-http_upstream_ip_hash_module \
+    --without-http_userid_module \
+    --without-http_uwsgi_module \
     && make -j$(getconf _NPROCESSORS_ONLN) \
     && strip -s objs/nginx
 
@@ -144,7 +144,7 @@ ARG ELABFTW_VERSION
 LABEL net.elabftw.name="elabftw" \
     net.elabftw.description="Run nginx and php-fpm to serve elabftw" \
     net.elabftw.url="https://www.elabftw.net" \
-    net.elabftw.vcs-url="https://github.com/elabftw/elabimg" \
+    net.elabftw.vcs-url="https://github.com/naidupotturu/elabimg" \
     net.elabftw.elabftw-version=$ELABFTW_VERSION \
     net.elabftw.image-version=$ELABIMG_VERSION
 
