@@ -144,7 +144,7 @@ ARG ELABFTW_VERSION
 LABEL net.elabftw.name="elabftw" \
     net.elabftw.description="Run nginx and php-fpm to serve elabftw" \
     net.elabftw.url="https://www.elabftw.net" \
-    net.elabftw.vcs-url="https://github.com/naidupotturu/elabimg:dev-changes" \
+    net.elabftw.vcs-url="https://github.com/elabftw/elabimg" \
     net.elabftw.elabftw-version=$ELABFTW_VERSION \
     net.elabftw.image-version=$ELABIMG_VERSION
 
