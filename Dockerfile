@@ -141,7 +141,7 @@ ENV ELABIMG_VERSION=5.0.0
 # it is a mandatory ARG
 ARG ELABFTW_VERSION
 
-LABEL net.elabftw.name="elabftw-dev" \
+LABEL net.elabftw.name="elabftw" \
     net.elabftw.description="Run nginx and php-fpm to serve elabftw" \
     net.elabftw.url="https://www.elabftw.net" \
     net.elabftw.vcs-url="https://github.com/elabftw/elabimg" \
